@@ -65,10 +65,10 @@ implementation-class=com.hezd.plugins.Test
             classpath 'com.hezd.plugins:GroovyShare:1.0.0'
         }
     }
-
-demo工程:
 ```
 
+demo工程:
+https://github.com/dreamkid/GradlePluginDemo
 
 感谢:
 http://liuwangshu.cn/application/gradle/6-custonplugin.html
