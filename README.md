@@ -4,8 +4,8 @@ gradle插件开发(上传到本地仓库)
 1.创建groovy工程        
 创建一个java-library工程,在src/main目录下新建groovy目录,在groovy目录下编写自定义插件     
 class Test implements Plugin<Project>{      
-       >@Override       
-        >void apply(Project project) {       
+       \t@Override       
+        void apply(Project project) {       
          >>project.task("testTask"){          
             >>>try {       
                 >>>>def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]
