@@ -3,15 +3,22 @@ gradle是基于jvm的构架工具,通常使用dsl语言groovy开发,目前同样
 gradle插件开发(上传到本地仓库)<br>
 1.创建groovy工程<br>
 创建一个java-library工程,在src/main目录下新建groovy目录,在groovy目录下编写自定义插件<br>
-class Test implements Plugin<Project>{<br>
-    @Override<br>
-    void apply(Project project) {<br>
-        project.task("testTask"){<br>
-           println('hello world')<br>
+class Test implements Plugin<Project>{
+    @Override
+    void apply(Project project) {
+        project.task("testTask"){
+            try {
+                def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]
+                println("testtask:$assetsPath")
+            }catch(Exception e){
+                println("获取assets目录失败")
+                println("父目录是:$project.parent.projectDir.absolutePath")
+            }
+
         }
 
     }
-}<br>
+}
 需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库<br>
 apply plugin 'groovy'<br>
 apply plugin 'maven'<br>
