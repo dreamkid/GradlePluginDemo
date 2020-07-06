@@ -14,9 +14,9 @@ class Test implements Plugin<Project>{
 >>>}catch(Exception e){        
 >>>>println("获取assets目录失败")     
 >>>>println("父目录是:$project.parent.projectDir.absolutePath")     
->>>}               
->>}     
->}      
+>>>}                       
+>>}          
+>}            
 }           
 
 需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库<br>
