@@ -7,17 +7,15 @@ gradle插件开发(上传到本地仓库)
 class Test implements Plugin<Project>{      
     @Override
     void apply(Project project) {       
-        project.task("testTask"){
-            try {
-                def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]
-                println("testtask:$assetsPath")
-            }catch(Exception e){
-                println("获取assets目录失败")
-                println("父目录是:$project.parent.projectDir.absolutePath")
-            }
-
+        project.task("testTask"){       
+            try {       
+                def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]     
+                println("testtask:$assetsPath")     
+            }catch(Exception e){        
+                println("获取assets目录失败")     
+                println("父目录是:$project.parent.projectDir.absolutePath")     
+            }       
         }
-
     }
 }
 
