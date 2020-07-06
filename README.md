@@ -1,6 +1,6 @@
 gradle是基于jvm的构架工具,通常使用dsl语言groovy开发,目前同样支持用kotlin进行开发
 
-gradle插件开发(上传到本地仓库)
+gradle插件开发(上传到本地仓库)<br>
 1.创建groovy工程
 创建一个java-library工程,在src/main目录下新建groovy目录,在groovy目录下编写自定义插件
 class Test implements Plugin<Project>{
