@@ -67,10 +67,9 @@ implementation-class=com.hezd.plugins.Test
     }
 
 demo工程:
-
+```
 
 
 感谢:
-[百度](http://baidu.com)
 http://liuwangshu.cn/application/gradle/6-custonplugin.html
 https://blog.csdn.net/Gdeer/article/details/83062523
