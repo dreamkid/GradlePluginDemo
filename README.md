@@ -8,13 +8,13 @@ class Test implements Plugin<Project>{<br>
     void apply(Project project) {<br>
         project.task("testTask"){<br>
            println('hello world')<br>
-        }<br>
+        }
 
-    }<br>
+    }
 }<br>
-需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库
-apply plugin 'groovy'
-apply plugin 'maven'
+需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库<br>
+apply plugin 'groovy'<br>
+apply plugin 'maven'<br>
 
 group='com.hezd.plugins'
 version='1.0.0'
@@ -35,9 +35,9 @@ dependences {
 文件中指定自定义插件名称
 implementation-class=com.hezd.plugins.Test
 
-2.执行上传仓库命令,在父目录下生成repo本地仓库
+2.执行上传仓库命令,在父目录下生成repo本地仓库<br>
 
-3.在需要应用插件的库引入此插件
+3.在需要应用插件的库引入此插件<br>
     apply plugin: 'com.hezd.test'
     buildscript {
         repositories{
