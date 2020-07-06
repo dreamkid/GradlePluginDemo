@@ -17,7 +17,7 @@ class Test implements Plugin<Project>{
 
         >>}
 
-    >}
+    }
 }
 需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库<br>
 apply plugin 'groovy'<br>
