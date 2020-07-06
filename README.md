@@ -4,20 +4,25 @@ gradle插件开发(上传到本地仓库)
 1.创建groovy工程        
 创建一个java-library工程,在src/main目录下新建groovy目录,在groovy目录下编写自定义插件     
 
-class Test implements Plugin<Project>{      
->@Override
->void apply(Project project) {       
->>project.task("testTask"){       
->>>try {        
->>>>>def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]     
->>>>>println("testtask:$assetsPath")     
->>>}catch(Exception e){        
->>>>println("获取assets目录失败")     
->>>>println("父目录是:$project.parent.projectDir.absolutePath")     
->>}                       
-}     
-}      
-}           
+(```Java
+class Test implements Plugin<Project>{
+    @Override
+    void apply(Project project) {
+        project.task("testTask"){
+            try {
+                def assetsPath = project.android.sourceSets.main.assets.getSrcDirs()[0]
+                println("testtask:$assetsPath")
+            }catch(Exception e){
+                println("获取assets目录失败")
+                println("父目录是:$project.parent.projectDir.absolutePath")
+            }
+
+        }
+
+    }
+}
+```Java)
+
 
 需要在当前库build文件中引入groovy和maven的api,指定版本信息,上传本地仓库<br>
 apply plugin 'groovy'<br>
