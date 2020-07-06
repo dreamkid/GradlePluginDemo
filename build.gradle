@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {// 配置脚本依赖的资源路径,调用buildscript方法参数是一个闭包的代码块
+    repositories {//脚本依赖仓库路径
+        google()
+        jcenter()
+        mavenCentral()
+//        maven {
+//            url uri("repo")
+//        }
+    }
+    dependencies {// 配置脚本依赖
+        classpath 'com.android.tools.build:gradle:3.5.2'
+//        classpath "com.hezd.plugins:GroovyShare:1.0.0"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+def res =  {// groovy语言的闭包,闭包Closure
+    google()
+    jcenter()
+    mavenCentral()
+//    maven {
+//        url uri("repo")
+//    }
+}
+
+def allres ={
+    repositories (res)
+}
+allprojects (allres)// 项目配置
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

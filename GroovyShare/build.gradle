@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+group = 'com.hezd.plugins'
+version = '1.0.0'
+uploadArchives{
+    repositories{
+        mavenDeployer{
+            repository(url:uri('../repo'))
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('build/libs/groovy.jar')
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+// 如果需要android studio运行groovy程序需要添加下面配置
+//task renameGroovyToJava{
+//    doLast{
+//        delete "$buildDir/classes/java"
+//        File file = new File("$buildDir/classes/groovy")
+//        // file.name = "java" 不行，会报错
+//        println file.renameTo("$buildDir/classes/java")
+//    }
+//}
+//
+//compileJava.finalizedBy compileGroovy
+//compileGroovy.finalizedBy renameGroovyToJava
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

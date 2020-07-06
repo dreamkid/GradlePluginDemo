@@ -1,0 +1,2 @@
+include ':app', ':GroovyShare'
+rootProject.name='GradlePluginDemo'
